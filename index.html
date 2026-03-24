@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReLive Kombucha — Живой чай из Екатеринбурга</title>
+  <meta name="description" content="Натуральная ферментированная комбуча с живыми пробиотиками. Без пастеризации и консервантов. 100% натуральный состав.">
+  <link rel="icon" type="image/x-icon" href="assets/звезда_иконка_сайта_чуть_потемнее.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_ключ&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  <!-- Навигация -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="logo">
+        <span class="logo-text"><span class="logo-re">Re</span><span class="logo-live">Live</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero">Главная</a>
+        <a href="#products">Купить</a>
+        <a href="#about-kombucha">О комбуче</a>
+        <a href="#partners">Партнёры</a>
+        <a href="#where-buy">Где купить</a>
+        <a href="#our-story">Наша история</a>
+        <a href="#contacts">Контакты</a>
+<!-- Было: <a herf="#market">Корзина</a> -->
+<!-- Стало: -->
+<a href="#" onclick="openCartModal(); return false;">Корзина (<span id="navCartCount">0</span>)</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero секция -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title animate-fade-in-up">
+          <span class="hero-subtitle-text">КОМБУЧА RELIVE</span>
+          <span class="gradient-text">ЭТО НЕ ПРОСТО НАПИТОК,<br>ЭТО ОБРАЗ ЖИЗНИ</span>
+        </h1>
+        <p class="hero-tagline animate-fade-in-up delay-1">
+          Откройте для себя все вкусы от классических до экспериментальных
+        </p>
+        
+        <div class="hero-buttons animate-fade-in-up delay-2">
+          <button class="btn btn-primary btn-lg" onclick="scrollToSection('products')">
+            Выбрать вкус
+            <span class="btn-arrow">→</span>
+          </button>
+          <button class="btn btn-outline btn-lg" onclick="scrollToSection('where-buy')">
+            Где купить
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual animate-fade-in-right">
+        <div class="hero-bottle-wrapper">
+          <div class="hero-glow"></div>
+          <img src="assets/ReLive.png" alt="ReLive Kombucha" class="hero-bottle">
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span>Узнать больше</span>
+      <div class="scroll-arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Бегущая строка -->
+  <div class="marquee">
+    <div class="marquee-content">
+      <span>ЧИСТЫЙ НАТУРАЛЬНЫЙ СОСТАВ</span>
+      <span class="marquee-dot">●</span>
+      <span>НАСТОЯЩИЙ ЖИВОЙ ПРОДУКТ</span>
+      <span class="marquee-dot">●</span>
+      <span>ИСКЛЮЧИТЕЛЬНО ВЫСОКОЕ КАЧЕСТВО</span>
+      <span class="marquee-dot">●</span>
+      <span>ЧИСТЫЙ НАТУРАЛЬНЫЙ СОСТАВ</span>
+      <span class="marquee-dot">●</span>
+      <span>НАСТОЯЩИЙ ЖИВОЙ ПРОДУКТ</span>
+      <span class="marquee-dot">●</span>
+      <span>ИСКЛЮЧИТЕЛЬНО ВЫСОКОЕ КАЧЕСТВО</span>
+      <span class="marquee-dot">●</span>
+    </div>
+  </div>
+
+  <!-- Продукция -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Наша продукция</span>
+        <h2 class="section-title">Все <span class="gradient-text">вкусы</span></h2>
+        <p class="section-subtitle">От классических до экспериментальных</p>
+      </div>
+      
+      <div class="products-filter">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="berries">Berries & Flowers</button>
+        <button class="filter-btn" data-filter="tropical">Tropical & Fresh</button>
+        <button class="filter-btn" data-filter="speciality">Speciality & Pure</button>
+        <button class="filter-btn" data-filter="spicy">Spicy & Hot</button>
+        <button class="filter-btn" data-filter="coldbrew">Speciality Cold-Brew</button>
+        <button class="filter-btn" data-filter="dryhop">Speciality Dry Hop</button>
+        <button class="filter-btn" data-filter="brut">LIMITED BRUT</button>
+        <button class="filter-btn" data-filter="sets">SETS</button>
+      </div>
+      
+      <div class="products-grid">
+        <!-- Berries & Flowers -->
+        <div class="product-card" data-category="berries" data-aos="fade-up">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor6236-3164-4265-a263-336264333836/-/contain/279x420/center/center/-/format/webp/15273517.png.webp" alt="Forever Ivan 2" loading="lazy">
+            <div class="product-badge">Хит</div>
+          </div>
+          <div class="product-info">
+            <h3>Forever Ivan 2</h3>
+            <p class="product-desc">Смородина + Ревень + Иван-чай</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopImmediatePropagation();"> Добавить в корзину </button>
+              <span class="tag">ягодный</span>
+              <span class="tag">травяной</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="berries" data-aos="fade-up" data-aos-delay="50">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3939-6530-4137-b631-636434346234/-/contain/279x420/center/center/-/format/webp/75453506.png.webp" alt="Oolong Island" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Oolong Island</h3>
+            <p class="product-desc">Клубника + Базилик</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+            <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <span class="tag">ягодный</span>
+              <span class="tag">пряный</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="berries" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3539-3939-4562-a537-323838666364/-/contain/279x420/center/center/-/format/webp/55356244.png.webp" alt="Lady In Red" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Lady In Red</h3>
+            <p class="product-desc">Вишня + Гибискус + Ройбуш</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <span class="tag">вишнёвый</span>
+              <span class="tag">цветочный</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="berries" data-aos="fade-up" data-aos-delay="150">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3532-6464-4637-b431-323036643830/-/contain/279x420/center/center/-/format/webp/51884021.png.webp" alt="Fall In Lavender" loading="lazy">
+            <div class="product-badge">Популярный</div>
+          </div>
+          <div class="product-info">
+            <h3>Fall In Lavender</h3>
+            <p class="product-desc">Лаванда + Ежевика + Анчан</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <span class="tag">лавандовый</span>
+              <span class="tag">цветочный</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speciality & Pure -->
+        <div class="product-card" data-category="speciality" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3762-3166-4230-b637-376135623138/-/contain/279x420/center/center/-/format/webp/82133035.png.webp" alt="Kill Bilberry" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Kill Bilberry</h3>
+            <p class="product-desc">На шу пуэре</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">пуэр</span>
+              <span class="tag">классика</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="speciality" data-aos="fade-up" data-aos-delay="250">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor6465-6666-4834-a561-303730653336/-/contain/279x420/center/center/-/format/webp/89954476.png.webp" alt="Every Thyme" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Every Thyme</h3>
+            <p class="product-desc">На шен пуэре</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">пуэр</span>
+              <span class="tag">энергия</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="speciality" data-aos="fade-up" data-aos-delay="300">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3539-3633-4236-b031-353965653631/-/contain/279x420/center/center/-/format/webp/52902831.png.webp" alt="Earl Yellow" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Earl Yellow</h3>
+            <p class="product-desc">На эрл грее</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <span class="tag">чёрный чай</span>
+              <span class="tag">бергамот</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="speciality" data-aos="fade-up" data-aos-delay="350">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3530-6233-4361-b536-386365316332/-/contain/279x420/center/center/-/format/webp/73868608.png.webp" alt="Oh my green" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Oh my green</h3>
+            <p class="product-desc">На бирюзовом улуне</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">улун</span>
+              <span class="tag">свежесть</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="speciality" data-aos="fade-up" data-aos-delay="400">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor6333-3266-4634-a332-333234653032/-/contain/279x420/center/center/-/format/webp/67621344.png.webp" alt="Big GaBa Boom" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Big GaBa Boom</h3>
+            <p class="product-desc">На габа улуне</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <span class="tag">габа улун</span>
+              <span class="tag">релакс</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tropical & Fresh -->
+        <div class="product-card" data-category="tropical" data-aos="fade-up" data-aos-delay="450">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3230-6338-4838-b464-353366663239/-/contain/279x420/center/center/-/format/webp/17167426.png.webp" alt="Pineapple express" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Pineapple express</h3>
+            <p class="product-desc">На японском чае</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">ананас</span>
+              <span class="tag">тропики</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spicy & Hot -->
+        <div class="product-card" data-category="spicy" data-aos="fade-up" data-aos-delay="500">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor6562-6239-4666-a635-633332633131/-/contain/279x420/center/center/-/format/webp/10991324.png.webp" alt="Ginger Hype" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Ginger Hype</h3>
+            <p class="product-desc">На чёрном чае</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">имбирь</span>
+              <span class="tag">острый</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="spicy" data-aos="fade-up" data-aos-delay="550">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor6432-6431-4635-b137-343237646438/-/contain/279x420/center/center/-/format/webp/30453298.png.webp" alt="Ginger Up" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Ginger Up</h3>
+            <p class="product-desc">На чёрном чае</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">имбирь</span>
+              <span class="tag">бодрость</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speciality Cold-Brew -->
+        <div class="product-card" data-category="coldbrew" data-aos="fade-up" data-aos-delay="600">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3334-3166-4162-b138-613961356434/-/format/webp/11843708.png.webp" alt="Cold Brew-tiful" loading="lazy">
+            <div class="product-badge product-badge-new">New</div>
+          </div>
+          <div class="product-info">
+            <h3>Cold Brew-tiful</h3>
+            <p class="product-desc">На cold brew кофе</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">кофе</span>
+              <span class="tag">эксперимент</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speciality Dry Hop -->
+        <div class="product-card" data-category="dryhop" data-aos="fade-up" data-aos-delay="650">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/tild6631-3039-4961-b839-646437396133/-/contain/279x420/center/center/-/format/webp/IMG_7611.PNG.webp" alt="Hop On" loading="lazy">
+            <div class="product-badge product-badge-new">New</div>
+          </div>
+          <div class="product-info">
+            <h3>Hop On</h3>
+            <p class="product-desc">На габа улуне</p>
+            <div class="product-price">200₽</div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              
+              <span class="tag">охмелённая</span>
+              <span class="tag">эксперимент</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIMITED BRUT 750ml -->
+        <div class="product-card product-card-brut" data-category="brut" data-aos="fade-up" data-aos-delay="700">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3662-3135-4964-b739-316134643236/-/contain/312x312/center/center/-/format/webp/305aee0e304a30d914620dc92cae34c7.jpg.webp" alt="Urals Tropical BRUT" loading="lazy">
+            <div class="product-badge product-badge-premium">BRUT</div>
+          </div>
+          <div class="product-info">
+            <h3>Urals Tropical BRUT</h3>
+            <p class="product-desc">Манго + Банан + Ромашка (750 мл)</p>
+            <div class="product-price">750₽ <span class="old-price">890₽</span></div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">premium</span>
+              <span class="tag">брют</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card product-card-brut" data-category="brut" data-aos="fade-up" data-aos-delay="750">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3531-6662-4333-b233-653132353964/-/contain/312x312/center/center/-/format/webp/b833fee85abfa6fc2d73406b348af469.jpg.webp" alt="Vegan Vine BRUT" loading="lazy">
+            <div class="product-badge product-badge-premium">BRUT</div>
+          </div>
+          <div class="product-info">
+            <h3>Vegan Vine BRUT</h3>
+            <p class="product-desc">Груша + Виноград + Жасмин (750 мл)</p>
+            <div class="product-price" data-price="750">750₽ <span class="old-price">890₽</span></div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              
+              <span class="tag">premium</span>
+              <span class="tag">брют</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card product-card-brut" data-category="brut" data-aos="fade-up" data-aos-delay="800">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3261-3436-4261-b362-336463653864/-/contain/312x312/center/center/-/format/webp/9da7c39602ced34cb881db2cd8c758b6.jpg.webp" alt="Ginger Punch BRUT" loading="lazy">
+            <div class="product-badge product-badge-premium">BRUT</div>
+          </div>
+          <div class="product-info">
+            <h3>Ginger Punch BRUT</h3>
+            <p class="product-desc">Яблоко + Имбирь + Бадьян (750 мл)</p>
+            <div class="product-price">750₽ <span class="old-price">890₽</span></div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">premium</span>
+              <span class="tag">брют</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card product-card-brut" data-category="brut" data-aos="fade-up" data-aos-delay="850">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3237-3332-4330-b266-613338353134/-/contain/312x312/center/center/-/format/webp/094d913eb652a49b0fdef95d213eb980.jpg.webp" alt="Fall In Lavender BRUT" loading="lazy">
+            <div class="product-badge product-badge-premium">BRUT</div>
+          </div>
+          <div class="product-info">
+            <h3>Fall In Lavender BRUT</h3>
+            <p class="product-desc">Лаванда + Ежевика + Анчан (750 мл)</p>
+            <div class="product-price">750₽ <span class="old-price">890₽</span></div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              
+              <span class="tag">premium</span>
+              <span class="tag">брют</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card product-card-brut" data-category="brut" data-aos="fade-up" data-aos-delay="900">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor6164-3764-4565-a331-613534373061/-/contain/312x312/center/center/-/format/webp/58196ee57bee4a3aa66df8a061c8902c.jpg.webp" alt="Forever Ivan BRUT" loading="lazy">
+            <div class="product-badge product-badge-premium">BRUT</div>
+          </div>
+          <div class="product-info">
+            <h3>Forever Ivan BRUT</h3>
+            <p class="product-desc">Смородина + Ревень + Иван-чай (750 мл)</p>
+            <div class="product-price">750₽ <span class="old-price">890₽</span></div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">premium</span>
+              <span class="tag">брют</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card product-card-brut" data-category="brut" data-aos="fade-up" data-aos-delay="950">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor3436-3066-4237-a132-633261356135/-/contain/312x312/center/center/-/format/webp/ff286ad4f3b0c87ba7f27a5902100008.jpg.webp" alt="Pineapple Express BRUT" loading="lazy">
+            <div class="product-badge product-badge-premium">BRUT</div>
+          </div>
+          <div class="product-info">
+            <h3>Pineapple Express BRUT</h3>
+            <p class="product-desc">Ананас + Лемонграсс (750 мл)</p>
+            <div class="product-price">750₽ <span class="old-price">890₽</span></div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              
+              <span class="tag">premium</span>
+              <span class="tag">брют</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETS -->
+        <div class="product-card product-card-set" data-category="sets" data-aos="fade-up" data-aos-delay="1000">
+          <div class="product-image">
+            <img src="https://optim.tildacdn.com/stor6138-3239-4630-a335-396161356135/-/format/webp/97dab6cad24e5e5e63177fe7c42daf6f.webp" alt="SET HAPPY NEW LIVE BRUT - 6PACK-20% SALE" loading="lazy">
+            <div class="product-badge product-badge-sale">-20% SALE</div>
+          </div>
+          <div class="product-info">
+            <h3>SET "HAPPY NEW LIVE BRUT"</h3>
+            <p class="product-desc">6 бутылок любых вкусов со скидкой 20%</p>
+            <div class="product-price">3 600₽ <span class="old-price"></span></div>
+            <div class="product-tags">
+              <button class="cart-btn"  event.stopPropagation();">Добавить в корзину</button>
+              <p>ㅤ</p>
+              <span class="tag">набор</span>
+              <span class="tag">выгодно</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- О комбуче -->
+  <section class="about-kombucha" id="about-kombucha">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Полезная информация</span>
+        <h2 class="section-title">Что такое <span class="gradient-text">Комбуча</span></h2>
+      </div>
+      
+      <div class="kombucha-grid">
+        <div class="kombucha-info" data-aos="fade-right">
+          <div class="info-block">
+            <h3>Что такое Комбуча</h3>
+            <p>Комбуча — это натуральный ферментированный напиток на основе культуры чайного гриба, который получается в результате уксуснокислого брожения чая и сахара под действием живых бактерий и дрожжей. В итоге выходит освежающий, газированный напиток с приятными кисло-сладкими нотками.</p>
+          </div>
+          
+          <div class="info-block">
+            <h3>Чем полезна комбуча</h3>
+            <p>Комбучу ценят за высокое содержание органических кислот, пробиотиков и антиоксидантов, которые поддерживают пищеварение и общий тонус организма, насыщая его природной пользой.</p>
+            <p class="disclaimer">*Вся информация о полезных свойствах носит маркетинговый характер</p>
+          </div>
+        </div>
+        
+        <div class="benefits-grid" data-aos="fade-left">
+          <div class="benefit-card">
+            <div class="benefit-icon">🦠</div>
+            <h4>Улучшает пищеварение</h4>
+            <p>Пробиотики помогают поддерживать здоровую микрофлору кишечника</p>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">✨</div>
+            <h4>Детоксикация организма</h4>
+            <p>Глюкуроновая кислота поддерживает работу печени и выводит токсины</p>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <h4>Повышение иммунитета</h4>
+            <p>Антиоксиданты и полифенолы защищают от свободных радикалов</p>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <h4>Повышение энергии</h4>
+            <p>Содержит небольшое количество кофеина и натуральных сахаров</p>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">🧘</div>
+            <h4>Снятие тревожности</h4>
+            <p>Оказывает положительное влияние на психическое здоровье</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="production-features" data-aos="fade-up">
+        <h3>Настоящая живая уральская комбуча Relive</h3>
+        <p class="subtitle">Придумана и произведена c любовью в Екатеринбурге</p>
+        
+        <div class="features-list">
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Длительная естественная ферментация</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Бережное и щадящее производство</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Отсутствие добавок и консервантов</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Живой продукт без пастеризации</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Цельнолистовой высокосортный чай</span>
+          </div>
+        </div>
+        
+        <blockquote class="production-quote">
+          <p>«Комбуча - это не просто напиток. Это настоящий источник здоровья и энергии, который все чаще выбирают люди, стремящиеся к здоровому образу жизни»</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <<!-- Мини-игра -->
+  <section class="game" id="game">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge section-badge-coral">Интерактив</span>
+        <h2 class="section-title">Вырасти свой <span class="gradient-text">SCOBY</span></h2>
+        <p class="section-subtitle">SCOBY — это живая культура бактерий и дрожжей, которая превращает чай в комбучу. Покорми его и вырасти!</p>
+      </div>
+      
+      <div class="game-container">
+        
+        <!-- ЛЕВАЯ ЧАСТЬ: ТВОЯ БАНКА -->
+        <!-- Я оставил класс game-jar, чтобы сохранилась верстка друга, 
+             и добавил класс my-jar-wrapper для твоих стилей -->
+        <div class="game-jar my-jar-wrapper" style="background: none; border: none; box-shadow: none;">
+          <!-- Твои элементы -->
+          <div class="liquid" id="liquid"></div>
+          <img src="грибок.png" class="scoby-item" id="scoby">
+          <img src="чсчсчсчсч.png" class="jar-overlay">
+        </div>
+        
+        <!-- ПРАВАЯ ЧАСТЬ: ПАНЕЛЬ ДРУГА -->
+        <div class="game-panel">
+          <div class="game-stats">
+            <div class="game-stat">
+              <span class="stat-label">Рост SCOBY</span>
+              <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <span class="progress-text" id="progressText">0%</span>
+              </div>
+            </div>
+            
+            <div class="game-stat">
+              <span class="stat-label">Уровень ферментации</span>
+              <div class="fermentation-level">
+                <span class="level-dot active"></span>
+                <span class="level-dot" id="level2"></span>
+                <span class="level-dot" id="level3"></span>
+                <span class="level-dot" id="level4"></span>
+                <span class="level-dot" id="level5"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="game-instructions">
+            <h4>Как играть?</h4>
+            <p>Нажимайте кнопку "Покормить", чтобы SCOBY рос. Когда он достигнет 100%, вы станете мастером комбучи!</p>
+          </div>
+          
+          <!-- ТВОЯ КНОПКА (с дизайном друга, но твоей функцией) -->
+          <button class="btn btn-game" onclick="feedScoby()">
+            <span class="btn-icon">🍵</span>
+            ПОКОРМИТЬ SCOBY
+          </button>
+          
+          <a href="#products" class="btn btn-secondary hidden" id="successBtn">
+            <span class="btn-icon">🥤</span>
+            Выбрать комбучу!
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Партнёры -->
+  <section class="partners" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Сотрудничество</span>
+        <h2 class="section-title">Наши <span class="gradient-text">партнёры</span></h2>
+        <p class="section-subtitle">Вместе мы создаем здоровое и лучшее будущее</p>
+      </div>
+      
+      <div class="partners-grid">
+        <div class="partner-card" data-aos="fade-up">
+          <div class="partner-logo">
+            <img src="assets/partners/coffee-u.png" alt="Кофейни Ü" loading="lazy">
+          </div>
+          <h4>Кофейни Ü</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="partner-logo">
+            <img src="assets/partners/clear-barn.png" alt="Clear Barn" loading="lazy">
+          </div>
+          <h4>Clear Barn</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="partner-logo">
+            <img src="assets/partners/kray-sveta.png" alt="Край Света" loading="lazy">
+          </div>
+          <h4>Край Света</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="partner-logo">
+            <img src="assets/partners/french-baker.png" alt="Французский пекарь" loading="lazy">
+          </div>
+          <h4>Французский пекарь</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="partner-logo">
+            <img src="assets/partners/jang-su.png" alt="Jang Su" loading="lazy">
+          </div>
+          <h4>Jang Su</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="partner-logo">
+            <img src="assets/partners/rada.png" alt="Рада" loading="lazy">
+          </div>
+          <h4>Рада</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="partner-logo">
+            <img src="assets/partners/vegan.png" alt="Просто вегануться" loading="lazy">
+          </div>
+          <h4>Просто вегануться</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="partner-logo">
+            <img src="assets/partners/garage-gym.png" alt="Garage Gym" loading="lazy">
+          </div>
+          <h4>Garage Gym</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="partner-logo">
+            <img src="assets/partners/zhizn-mart.png" alt="Жизньмарт" loading="lazy">
+          </div>
+          <h4>Жизньмарт</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="450">
+          <div class="partner-logo">
+            <img src="assets/partners/lo-vegano.png" alt="Lo Vegano" loading="lazy">
+          </div>
+          <h4>Lo Vegano</h4>
+        </div>
+        
+        <div class="partner-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="partner-logo">
+            <img src="assets/partners/yandex-lavka.png" alt="Яндекс Лавка" loading="lazy">
+          </div>
+          <h4>Яндекс Лавка</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Где купить -->
+<!-- Где купить -->
+<section class="where-buy" id="where-buy">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Точки продаж</span>
+      <h2 class="section-title">Где купить <span class="gradient-text">ReLive?</span></h2>
+      <p class="section-subtitle">Локации в Екатеринбурге, где можно приобрести живую комбучу ReLive</p>
+    </div>
+    
+    <div class="map-wrapper">
+      <div class="map-container" id="map"></div>
+      
+      <div class="locations-sidebar" id="locationsSidebar">
+  <h3 class="locations-title">📍 Точки продаж</h3>
+  
+  <div class="location-card" data-index="0">
+    <div class="location-logo">
+      <img src="assets/ReLive.png" alt="ReLive" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Производство ReLive</h4>
+      <p>ул. 8 Марта, д. 207, корп. 2</p>
+      <span class="location-tag location-tag-production">Производство</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="1">
+    <div class="location-logo">
+      <img src="assets/partners/coffee-u.png" alt="Кофейни Ü" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Кофейни Ü</h4>
+      <p>ул. Малышева, 36</p>
+      <span class="location-tag">Кофейня</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="2">
+    <div class="location-logo">
+      <img src="assets/partners/clear-barn.png" alt="Clear Barn" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Clear Barn</h4>
+      <p>ул. Бориса Ельцина, 3</p>
+      <span class="location-tag">Бар</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="3">
+    <div class="location-logo">
+      <img src="assets/partners/kray-sveta.png" alt="Край Света" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Край Света</h4>
+      <p>ул. Вайнера, 9</p>
+      <span class="location-tag">Ресторан</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="4">
+    <div class="location-logo">
+      <img src="assets/partners/french-baker.png" alt="Французский пекарь" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Французский пекарь</h4>
+      <p>ул. Ленина, 24/8</p>
+      <span class="location-tag">Пекарня</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="5">
+    <div class="location-logo">
+      <img src="assets/partners/jang-su.png" alt="Jang Su" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Jang Su</h4>
+      <p>ул. Хохрякова, 42</p>
+      <span class="location-tag">Ресторан</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="6">
+    <div class="location-logo">
+      <img src="assets/partners/rada.png" alt="Рада" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Рада</h4>
+      <p>ул. 8 Марта, 8Д</p>
+      <span class="location-tag">Ресторан</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="7">
+    <div class="location-logo">
+      <img src="assets/partners/vegan.png" alt="Просто вегануться" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Просто вегануться</h4>
+      <p>ул. Малышева, 71</p>
+      <span class="location-tag">Магазин</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="8">
+    <div class="location-logo">
+      <img src="assets/partners/garage-gym.png" alt="Garage Gym" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Garage Gym</h4>
+      <p>ул. Первомайская, 77</p>
+      <span class="location-tag">Фитнес</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="9">
+    <div class="location-logo">
+      <img src="assets/partners/zhizn-mart.png" alt="Жизньмарт" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Жизньмарт</h4>
+      <p>Сеть магазинов Екатеринбурга</p>
+      <span class="location-tag">Сеть магазинов</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="10">
+    <div class="location-logo">
+      <img src="assets/partners/lo-vegano.png" alt="Lo Vegano" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Lo Vegano</h4>
+      <p>ул. Розы Люксембург, 14</p>
+      <span class="location-tag">Магазин</span>
+    </div>
+  </div>
+  
+  <div class="location-card" data-index="11">
+    <div class="location-logo">
+      <img src="assets/partners/yandex-lavka.png" alt="Яндекс Лавка" loading="lazy">
+    </div>
+    <div class="location-info">
+      <h4>Яндекс Лавка</h4>
+      <p>Доставка по Екатеринбургу</p>
+      <span class="location-tag location-tag-delivery">Доставка</span>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- МОДАЛЬНОЕ ОКНО ТОВАРА (ДЕТАЛЬНОЕ) -->
+  <div class="modal product-modal" id="productModal">
+    <div class="modal-overlay" onclick="closeProductModal()"></div>
+    <div class="modal-content product-modal-content">
+      <button class="modal-close" onclick="closeProductModal()">&times;</button>
+      
+      <div class="product-detail-grid">
+        <!-- Сюда JS вставит картинку -->
+        <div class="product-detail-image" id="pModalImage"></div>
+        
+        <div class="product-detail-info">
+          <div class="product-detail-header">
+            <span class="section-badge" id="pModalCategory">Категория</span>
+            <h2 id="pModalTitle">Название товара</h2>
+            <div class="product-price-large" id="pModalPrice">0 ₽</div>
+          </div>
+          
+          <div class="product-detail-body">
+            <p id="pModalDesc">Описание...</p>
+            
+            <div class="product-specs">
+              <div class="spec-item">
+                <strong>Объем:</strong>
+                <span>330 мл</span> <!-- Или 750 для брюта -->
+              </div>
+              <div class="spec-item">
+                <strong>Состав:</strong>
+                <span id="pModalIngredients">Чай, вода, культура...</span>
+              </div>
+              <div class="spec-item">
+                <strong>КБЖУ (на 100мл):</strong>
+                <span>24 ккал</span>
+              </div>
+            </div>
+          </div>
+          
+            <div class="product-detail-actions">
+            <!-- Выбор количества -->
+            <div class="quantity-selector">
+              <button onclick="changeModalQty(-1)" type="button">−</button>
+              <input type="number" id="pModalQty" value="1" min="1" readonly>
+              <button onclick="changeModalQty(1)" type="button">+</button>
+            </div>
+            
+            <!-- Кнопка добавления -->
+            <button class="btn btn-primary btn-lg" id="pModalAddBtn">
+              Добавить в корзину
+            </button>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ -->
+  <div class="modal cart-modal" id="cartModal">
+    <div class="modal-overlay" onclick="closeCartModal()"></div>
+    <div class="modal-content cart-modal-content">
+      <button class="modal-close" onclick="closeCartModal()">&times;</button>
+      
+      
+      <!-- Список товаров -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- JS сюда добавит товары или текст "Корзина пуста" -->
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Итого:</span>
+          <span class="cart-total-price" id="cartTotalPrice">0 ₽</span>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="checkout()">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Наша история -->
+  <section class="our-story" id="our-story">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">История бренда</span>
+        <h2 class="section-title">Наша <span class="gradient-text">история</span></h2>
+        <p class="section-subtitle">Relive ex Live brew - это не просто напиток, это искусство в каждом нюансе и самом вкусе</p>
+      </div>
+      
+      <div class="story-mission" data-aos="fade-up">
+        <h3>Наша миссия</h3>
+        <p>Сделать так, чтобы комбучу узнали, полюбили и открыли для себя множество людей в качестве полезной натуральной альтернативы безалкогольным напиткам.</p>
+        <p>Мы стремимся, чтобы каждый открыл для себя уникальные свойства живой комбучи и наслаждался её пользой для здоровья!</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-year">2013-2015</div>
+          <div class="timeline-content">
+            <h4>Начало пути - чайная культура и мастерство</h4>
+            <p>Иван Тюленев начал свой путь в мир чайной культуры в 2013 году. Его увлечение традициями китайской чайной церемонии привело к обучению в школе чайного искусства, где он изучал не только культуру и историю чая, но и практические принципы и методы заваривания, приготовления и подачи чая. Это увлечение стало основой будущей концепции LIVE BREW.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-year">2015-2016</div>
+          <div class="timeline-content">
+            <h4>Первые шаги в чайном бизнесе</h4>
+            <p>В 2015 году Иван со своим другом единомышленником Алексеем открыли первый чайный бар на Урале – SAMOVAR TEA-BAR. Именно в то время и было положено начало будущей идеологии создания живых, натуральных напитков что так же отразилось в названии компании «Вкус от природы» а логотип и фирменный стиль впоследствии был унаследован и использован в будущем бренде LIVE BREW – чашечка и цветок. В чайном баре Иван проводил всё своё время, организовывая чайные церемонии и увлекая гостей и посетителей рассказами о чае и чайной культуре. Параллельно он проводил многочисленные эксперименты по созданию напитков на основе чая, включая холодные чаи по методике COLD BREW (настаивание чая в холодной воде), а также придумывал уникальные вкусовые сочетания с использованием натуральных трав, цветов и специй. Этот опыт стал решающим в его дальнейшем развитии, как создателя уникальных вкусовых сочетаний.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-year">2016</div>
+          <div class="timeline-content">
+            <h4>Рождение комбучи LIVE BREW</h4>
+            <p>Летом 2016 года в рамках того же чайного бара Иван открыл для себя напиток комбуча. Он глубоко изучил его историю, технологию, биохимию и органолептику, что вдохновило его на создание первых образцов комбучи LIVE BREW.</p>
+            <p><strong>7 августа 2016</strong> (дату впоследствии стали считать датой основания бренда) первая комбуча LIVE BREW была впервые представлена на городском фестивале еды «Гастроном», где за считанные часы была полностью раскуплена и получила восторженные отзывы. Это стало отправной точкой в развитии концепции Живого Чая– напитка в котором вкус, цвет и аромат достигаются исключительно за счёт безалкогольного брожения культуры чайного гриба и натуральных компонентов: ягод, фруктов, трав, цветов и специй.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-year">2017</div>
+          <div class="timeline-content">
+            <h4>Официальное рождение бренда</h4>
+            <p>В 2017 году Иван с партнером основывает и регистрирует первый уральский бренд комбучи LIVE BREW и открывает небольшое производство площадью всего около 20 м². В этом компактном цехе одновременно ферментировались, разливались и хранились первые партии уральской комбучи – всего 4-5 вкусов. Именно в этот период начались первые поставки в заведения, магазины здорового питания и кафе Екатеринбурга.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-year">2018-2020</div>
+          <div class="timeline-content">
+            <h4>Расширение производства и линейки вкусов</h4>
+            <p>В последующие годы производство продолжает расти, а ассортимент увеличивается до 12 вкусов. Некоторые сочетания приходили Ивану буквально во сне, например, жасмин + груша + виноград («Just mine Dreamings»). Среди успешных экспериментов появились комбуча-кофе и охмеленная безалкогольная комбуча, которые и по сей день остаются популярными. Небольшие объёмы производства позволяли сохранять гибкость, но ограничивали темпы роста. Иван не только лично участвовал во всех этапах производства, но и активно продвигал бренд, участвуя в фестивалях и ярмарках, где продолжал знакомить с напитком собирать отзывы и в последствии совершенствовать напиток.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-year">2020-2022</div>
+          <div class="timeline-content">
+            <h4>Совершенствование производства и обучение команды</h4>
+            <p>В этот период произошло первое значительное расширение производственных площадей и первая модернизация оборудования. Иван передавал базовые знания и философию бренда своей первой команде, линейка вкусов к тому времени возросла до 23, а география точечных поставок расширялась по всей стране от Омска до Калининграда. Появились новые экспериментальные и сезонные вкусы, а также комбуча-брюты, созданные методом естественной выдержки и созревания.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-year">2022-2024</div>
+          <div class="timeline-content">
+            <h4>Модернизация технологии, наращивание объемов производства с сохранением высокого качества продукта</h4>
+            <p>Бренд активно наращивал мощности, внедряя усовершенствованные технологии, оптимизируя рецептуры и стандартизируя производственные процессы. Одним из ключевых направлений стало увеличение сроков годности напитков без ущерба для натурального состава и философии бренда. В 2024 году компания сталкивается с новыми вызовами и полностью меняет состав руководящего и партнерского звена, нацеленное на дальнейший рост компании и модернизацию производства.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-item-current" data-aos="fade-left">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">
+            <h4>Движение к новым вершинам роста, полное технологическое обновление производства. Рождение нового бренда RELIVE</h4>
+            <p>В 2025 году компания движется к новым вершинам: автоматизация производства, обновление рецептур и улучшение вкусов. Среди прочих планов на годовой повестке – запуск спортивно-обогащённой линейки, а так же поточного производства натурального комбуча-брюта. Иван Тюленев остаётся верен идеологии Комбучи живого чая и продолжает развивать бренд LIVE BREW, а также запускает новый бренд RELIVE, не идя на компромиссы, но сохраняя всё лучшее, что было создано за эти годы.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <div class="contacts-grid">
+        <div class="contacts-info" data-aos="fade-right">
+          <span class="section-badge">Контакты</span>
+          <h2 class="section-title">Свяжитесь <span class="gradient-text">с нами</span></h2>
+          <div class="contact-items">
+
+            <a href="mailto:kombucha@livebrewtea.ru" class="contact-item" >
+              <span class="contact-icon"></span>
+              <div>
+                <strong>Общие вопросы</strong>
+                <span>kombucha@livebrewtea.ru</span>
+              </div>
+            </a>
+            
+            <a href="mailto:opt@livebrewtea.ru" class="contact-item">
+              <span class="contact-icon"></span>
+              <div>
+                <strong>Оптовые закупки</strong>
+                <span>opt@livebrewtea.ru</span>
+              </div>
+            </a>
+            
+            <a href="mailto:4partner@livebrewtea.ru" class="contact-item">
+              <span class="contact-icon"></span>
+              <div>
+                <strong>Предложения о сотрудничестве</strong>
+                <span>4partner@livebrewtea.ru</span>
+              </div>
+            </a>
+            
+            <div class="contact-item">
+              <span class="contact-icon"></span>
+              <div>
+                <strong>Адрес производства</strong>
+                <span>г. Екатеринбург, ул. 8 марта д. 207, кор. 2</span>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <span class="contact-icon"></span>
+              <div>
+                <strong>Юридический адрес</strong>
+                <span>г. Екатеринбург, ул. Куйбышева 10-105</span>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <span class="contact-icon"></span>
+              <div>
+                <strong>Реквизиты</strong>
+                <span>ООО "Вкус от природы" ИНН 6671456280</span>
+              </div>
+            </div>
+            
+            <a href="https://t.me/relivekombucha" target="_blank" class="contact-item">
+              <span class="contact-icon"></span>
+              <div>
+                <strong>Telegram</strong>
+                <span>@relivekombucha</span>
+              </div>
+            </a>
+            
+            <a href="https://wa.me/79000000000" target="_blank" class="contact-item">
+              <span class="contact-icon"></span>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>Написать в WhatsApp</span>
+              </div>
+            </a>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://t.me/relivekombucha" target="_blank" class="social-link" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/79000000000" target="_blank" class="social-link" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com/relivekombucha" target="_blank" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="contacts-form" data-aos="fade-left">
+          <form id="contactForm">
+            <h3>Напишите нам</h3>
+            
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Телефон" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Email" required>
+            </div>
+            
+            <div class="form-group">
+              <select name="subject" required>
+                <option value="" >Тема обращения</option>
+                <option value="partnership">Стать партнёром</option>
+                <option value="wholesale">Оптовые закупки</option>
+                <option value="feedback" img src="feeback">Отзыв о продукции</option>
+                <option value="cooperation">Сотрудничество</option>
+                <option value="other">Другое</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <textarea name="message" placeholder="Сообщение" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-full">
+              Отправить
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo footer-logo">
+            <span class="logo-re">Re</span><span class="logo-live">Live</span>
+          </a>
+          <p>Живая комбуча из Екатеринбурга. Натуральный ферментированный напиток с живыми пробиотиками.</p>
+          <div class="footer-social">
+            <!--<a href="https://t.me/relivekombucha" target="_blank" aria-label="Telegram"></a>
+            <!--<a href="https://wa.me/79000000000" target="_blank" aria-label="WhatsApp"></a>
+            <a href="https://instagram.com/relivekombucha" target="_blank" aria-label="Instagram"></a>-->
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="#products">Купить</a></li>
+            <li><a href="#about-kombucha">О комбуче</a></li>
+            <li><a href="#partners">Партнёры</a></li>
+            <li><a href="#where-buy">Где купить</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Компания</h4>
+          <ul>
+            <li><a href="#our-story">Наша история</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+            <li><a href="#" onclick="openModal('privacy')">Политика конфиденциальности</a></li>
+            <li><a href="#" onclick="openModal('terms')">Политика обработки данных</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Контакты</h4>
+          <ul>
+            <li> <img src="assets/email.png" class="icon">kombucha@livebrewtea.ru</li>
+            <li> <img src="assets/samsaaaa.png" class="icon">opt@livebrewtea.ru</li>
+            <li> <img src ="assets/metka.png" class="icon">Екатеринбург, ул. 8 марта 207/2</li>
+            <li> <img src="assets/fabrica-ebanaya.png" class="icon">ИНН 6671456280</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 ReLive Kombucha. ООО "Вкус от природы"</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Маскот SCOBY -->
+  <div class="mascot" id="mascot">
+    <div class="mascot-speech" id="mascotSpeech">Привет! Я SCOBY! 🍄‍🟫</div>
+    <div class="mascot-body" id="mascotBody"></div>
+  </div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
